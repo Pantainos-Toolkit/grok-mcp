@@ -90,7 +90,7 @@ async def search_x(
     excluded_handles: Optional[list[str]] = None,
     from_date: Optional[str] = None,
     to_date: Optional[str] = None,
-    enable_image_understanding: bool = False,
+    enable_image_understanding: bool = True,
     enable_video_understanding: bool = False,
     model: Optional[str] = None,
     system_prompt: Optional[str] = None,
