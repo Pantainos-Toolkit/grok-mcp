@@ -139,31 +139,6 @@ async def search_x(
     )
 
 
-@mcp.tool
-async def ask_grok(
-    query: str,
-    model: Optional[str] = None,
-    system_prompt: Optional[str] = None,
-    temperature: Optional[float] = None,
-) -> dict:
-    """Ask Grok a question without live search (uses model knowledge only).
-
-    Args:
-        query: Your question or prompt.
-        model: Override the default Grok model.
-        system_prompt: Optional system prompt.
-        temperature: Sampling temperature (0-2).
-
-    Returns:
-        Dict with 'text' (answer), 'model', and 'usage'.
-    """
-    return await _responses(
-        query,
-        model=model,
-        system_prompt=system_prompt,
-        temperature=temperature,
-    )
-
 
 def main():
     mcp.run()
