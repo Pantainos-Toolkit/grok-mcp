@@ -89,7 +89,7 @@ def _extract_response(raw: dict) -> str:
     return body
 
 
-@mcp.tool
+@mcp.tool(annotations={"readOnlyHint": True, "openWorldHint": True})
 async def search_x(
     query: str,
     allowed_handles: Optional[list[str]] = None,
