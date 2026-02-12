@@ -12,6 +12,11 @@ load_dotenv()
 XAI_BASE_URL = "https://api.x.ai/v1"
 API_KEY = os.environ.get("XAI_API_KEY", "")
 DEFAULT_MODEL = os.environ.get("GROK_MODEL", "grok-4-1-fast-non-reasoning")
+DEFAULT_SYSTEM_PROMPT = (
+    "Prioritize breadth over depth. Surface as many distinct viewpoints, "
+    "voices, and sources as possible rather than deeply analysing a few. "
+    "Keep each point concise so you can cover more ground."
+)
 
 mcp = FastMCP("Grok X Search")
 
@@ -136,7 +141,7 @@ async def search_x(
     return await _responses(
         query,
         tools=[tool_config],
-        system_prompt=system_prompt,
+        system_prompt=system_prompt or DEFAULT_SYSTEM_PROMPT,
         temperature=temperature,
     )
 
