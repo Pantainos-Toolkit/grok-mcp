@@ -11,7 +11,7 @@ load_dotenv()
 
 XAI_BASE_URL = "https://api.x.ai/v1"
 API_KEY = os.environ.get("XAI_API_KEY", "")
-DEFAULT_MODEL = os.environ.get("GROK_MODEL", "grok-4-1-fast")
+DEFAULT_MODEL = os.environ.get("GROK_MODEL", "grok-4-1-fast-non-reasoning")
 
 mcp = FastMCP("Grok X Search")
 
